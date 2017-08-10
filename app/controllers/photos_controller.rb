@@ -12,6 +12,12 @@ class PhotosController < ApplicationController
     render("photos/show.html.erb")
   end
 
+  def my_likes
+    @photos = current_user.liked_photos
+
+    render("photos/mine.html.erb")
+  end
+
   def new
     @photo = Photo.new
 
