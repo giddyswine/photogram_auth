@@ -6,8 +6,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user.id
-
+    @user = params[:id]
+    @photos = Photo.all
     render("users/show.html.erb")
   end
 end
