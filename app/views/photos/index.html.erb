@@ -1,0 +1,49 @@
+<div class="page-header">
+  <h1>
+    Photos
+    <a href="/photos/new" class="btn btn-lg btn-success">New Photo</a>
+  </h1>
+</div>
+
+<% @photos.each do |photo| %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <%= User.find(photo.user_id).username %>
+        </h3>
+      </div>
+        <div class="panel-body">
+          <a href="/photos/<%= photo.user_id %>">
+            <td><img src="<%= photo.image %>" width="500"></td>
+          </a>
+          <p>
+              <a href="/photos/Click to Like"</a>
+                <i class="fa fa-heart"></i>
+              </a>
+          </p>
+          <ul class="media-list">
+  
+            <li class="media">
+              <div class="media-body">
+                <h6 class="media-heading">
+                  <a href="/users/189">carol</a>
+                  <small>
+                    7 days ago
+                  </small>
+                </h6>
+                Mostar
+              </div>
+            </li>            
+          </ul>
+          <div class="btn-group btn-group-justified">
+            <a href="/photos" class="btn btn-primary">
+              <i class="fa fa-chevron-left"></i>
+            </a>
+          </div>
+        </div>
+    </div>
+  </div>            
+</div>            
+<%end%> 
